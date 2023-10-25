@@ -1,0 +1,41 @@
+/* index.module.css */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 960px;
+  //background-color: #5b60fd;
+  padding-top: 120px;
+}
+
+.tracking-help {
+  margin-top: 3rem;
+
+  &__heading {
+    text-align: start;
+    margin-top: 2.5rem;
+  }
+
+  &__back-link {
+    color: #000000;
+    text-decoration-color: #000000;
+    margin-top: 40px;
+  }
+
+  &__status-heading {
+    text-align: start;
+  }
+
+  &__status-description {
+    text-align: justify;
+  }
+}

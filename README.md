@@ -1,17 +1,6 @@
-# Material UI - Next.js App Router example
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with Material UI installed.
+# Loggi - Desafio Henrique
 
 ## How to use
-
-Download the example [or clone the repo](https://github.com/mui/material-ui):
-
-<!-- #default-branch-switch -->
-
-```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/material-ui-nextjs
-cd material-ui-nextjs
-```
 
 Install it and run:
 
@@ -22,14 +11,31 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-or:
 
-<!-- #default-branch-switch -->
+## Accessing the Order Code
+You can access the order code "100" for testing purposes.
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-nextjs)
+## Testing
+This project includes unit tests and E2E (End-to-End) tests using Cypress. To run the tests, follow these instructions:
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/material-ui-nextjs)
+## Unit Tests
+To run unit tests, use the following command:
 
+```bash
+Copy code
+npm run test
+```
+## E2E Tests (Cypress)
+To run E2E tests with Cypress, follow these steps:
+
+1 - Make sure the project is running with npm run dev.
+2 - Open a new terminal and run the following command to start Cypress:
+
+```bash
+Copy code
+npm run test
+```
+1 - In the Cypress dashboard, you will see the "Tracking E2E Test.js" option. Click on it to run the E2E test.
 ## Learn more
 
 To learn more about this example:
