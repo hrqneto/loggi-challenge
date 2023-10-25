@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Container, Typography } from "@mui/material";
 import Form from "../LoFormTracking/LoFormTracking";
-import styles from "./LoBody.module.scss";
+import styles from "./loBody.module.scss";
 
 export default function Body({ mobile, desktop }) {
   return (
