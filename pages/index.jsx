@@ -6,22 +6,30 @@ import Body from "../src/components/LoBody/LoBody";
 import Footer from "../src/components/LoLayout/Footer";
 import styles from "./index.module.scss";
 
+function DesktopLayout({ children }) {
+  return <div className={styles.desktop}>{children}</div>;
+}
+
+function MobileLayout({ children }) {
+  return <>{children}</>;
+}
+
 export default function Home() {
-  const isDesktop = useMediaQuery("(min-width: 960px)");
+  const isMinWidth960 = useMediaQuery("(min-width: 960px)");
 
   return (
     <div className={styles.home}>
       <Header />
-      {isDesktop ? (
-        <div className={styles.desktop}>
+      {isMinWidth960 ? (
+        <DesktopLayout>
           <Body desktop />
           <Head home />
-        </div>
+        </DesktopLayout>
       ) : (
-        <>
+        <MobileLayout>
           <Head home />
           <Body mobile />
-        </>
+        </MobileLayout>
       )}
       <Footer />
     </div>

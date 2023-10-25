@@ -13,7 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 ## Accessing the Order Code
-You can access the order code "100" for testing purposes.
+You can access the order codes "100", "200" or "300", for testing purposes.
 
 ## Testing
 This project includes unit tests and E2E (End-to-End) tests using Cypress. To run the tests, follow these instructions:

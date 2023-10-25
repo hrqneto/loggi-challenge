@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Header from '../src/components/LoLayout/Header';
-import TrackingInfo from '../src/components/LoPageTracking/LoPageTracking';
+import PageTracking from '../src/components/LoPageTracking/LoPageTracking';
 import Footer from '../src/components/LoLayout/Footer';
 import { getItem } from '../src/utils/storage';
 import Head from '../src/components/LoLayout/Head';
@@ -12,7 +12,7 @@ export default function Tracking() {
             <Header />
             <Head tracking />
             {getId && (
-                <TrackingInfo trackingId={getId} />
+                <PageTracking trackingId={getId} />
             )}
             <Footer />
         </>

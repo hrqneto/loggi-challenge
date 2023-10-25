@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Link, Container, Typography } from "@mui/material";
+import { Container, Link, Typography } from "@mui/material";
 import Footer from "../src/components/LoLayout/Footer";
 import Header from "../src/components/LoLayout/Header";
-import styles from "./index.module.scss"; // Importando as classes de estilo BEM
+import styles from "./index.module.scss";
 
 export default function TrackingHelp() {
   return (
@@ -14,51 +14,29 @@ export default function TrackingHelp() {
 
       <Container className={styles["tracking-help"]}>
         <Typography
-          variant="p"
+          variant="h6"
           component="h2"
           className={styles["tracking-help__heading"]}
         >
           O que significa cada status?
         </Typography>
-        <Typography
-          variant="h6"
-          component="p"
-          className={styles["tracking-help__status-heading"]}
-        >
-          Status: Em rota para coleta
-        </Typography>
 
-        <Typography
-          variant="h6"
-          component="p"
-          className={styles["tracking-help__status-heading"]}
-        >
-          Status: Pedido recebido
-        </Typography>
-
-        <Typography
-          variant="h6"
-          component="p"
-          className={styles["tracking-help__status-heading"]}
-        >
-          Status: Pacote coletado
-        </Typography>
-
-        <Typography
-          variant="h6"
-          component="p"
-          className={styles["tracking-help__status-heading"]}
-        >
-          Status: Em rota de entrega
-        </Typography>
-
-        <Typography
-          variant="h6"
-          component="p"
-          className={styles["tracking-help__status-heading"]}
-        >
-          Status: Finalizado
-        </Typography>
+        {[
+          "Em rota para coleta",
+          "Pedido recebido",
+          "Pacote coletado",
+          "Em rota de entrega",
+          "Finalizado",
+        ].map((status, index) => (
+          <Typography
+            key={index}
+            variant="h6"
+            component="p"
+            className={styles["tracking-help__status-heading"]}
+          >
+            Status: {status}
+          </Typography>
+        ))}
       </Container>
       <Footer />
     </>

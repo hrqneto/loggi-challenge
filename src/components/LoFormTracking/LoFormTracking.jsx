@@ -1,27 +1,32 @@
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import { Box, Typography, TextField, Button, Link } from "@mui/material";
-import { setItem } from "../../utils/storage";
-import { mockOrder } from "../../mock/mockData";
+import { useRouter } from "next/router";
 import styles from "./loFormTracking.module.scss";
 
-export default function Form() {
+export default function LoFormTracking() {
   const [trackingCode, setTrackingCode] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const router = useRouter();
 
-  const handleTrackingCode = async (e, code) => {
+  const handleTrackingCode = async (e) => {
     e.preventDefault();
 
-    if (!code) {
+    if (!trackingCode) {
       setErrorMessage("Por favor, insira o código de rastreio.");
       return;
     } else {
-      if (code === mockOrder.id.toString()) {
+      // Simulando validação para os códigos 100, 200 e 300
+      if (
+        trackingCode === "100" ||
+        trackingCode === "200" ||
+        trackingCode === "300"
+      ) {
         setErrorMessage("");
         setTrackingCode("");
-        setItem("id", code);
-        router.push("/Tracking");
+        router.push({
+          pathname: "/Tracking",
+          query: { trackingId: trackingCode },
+        });
       } else {
         setErrorMessage("Código inválido.");
       }
@@ -33,15 +38,15 @@ export default function Form() {
       <Typography
         variant="h5"
         component="h3"
-        className={`${styles["lo-body__resume"]}`}
+        className={styles["lo-body__resume"]}
       >
-        acompanhe a sua entrega inseringo o código abaixo
+        Acompanhe a sua entrega inserindo o código abaixo
       </Typography>
       <TextField
         onChange={(e) => setTrackingCode(e.target.value)}
         value={trackingCode}
         id="outlined-basic"
-        label="código de rastreio"
+        label="Código de rastreio"
         variant="outlined"
         required
         fullWidth
@@ -51,15 +56,14 @@ export default function Form() {
         {errorMessage}
       </Typography>
       <Button
-        onClick={(e) => handleTrackingCode(e, trackingCode)}
+        onClick={(e) => handleTrackingCode(e)}
         variant="contained"
         className={`${styles.formButton} ${styles.customFontButton}`}
       >
         Acompanhar pacote
       </Button>
-
       <Link href="/Help" className={styles.formLink}>
-        dúvidas sobre o rastreio
+        Dúvidas sobre o rastreio
       </Link>
     </Box>
   );

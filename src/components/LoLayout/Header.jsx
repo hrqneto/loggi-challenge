@@ -9,18 +9,12 @@ import ListItemText from "@mui/material/ListItemText";
 import { useMediaQuery } from "@mui/material";
 import styles from "./styles.module.scss";
 
-export default function Header() {
+const Header = () => {
   const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar
-        position="static"
-        sx={{
-          background: "#ffffff",
-          width: "100vw",
-        }}
-      >
+      <AppBar position="static" sx={{ background: "#ffffff", width: "100vw" }}>
         <Toolbar
           sx={{
             display: "flex",
@@ -31,7 +25,7 @@ export default function Header() {
           <Link
             component="button"
             variant="body2"
-            className={styles["lo-button-app-bar__logo"]}
+            className={styles.loButtonAppBarLogo}
           >
             <img
               src="/img/loggi-logo-full.png"
@@ -46,29 +40,25 @@ export default function Header() {
               marginLeft: "auto",
               alignItems: "center",
             }}
-            className={styles["lo-button-app-bar__menu"]}
           >
-            <ListItem button>
-              <ListItemText
-                primary="Para Você"
-                className={styles["lo-button-app-bar__menu-item"]}
-              />
-            </ListItem>
-            <ListItem button>
-              <ListItemText
-                primary="Para Empresas"
-                className={styles["lo-button-app-bar__menu-item"]}
-              />
-            </ListItem>
-            <ListItem button>
-              <ListItemText
-                primary="Para Entregar"
-                className={styles["lo-button-app-bar__menu-item"]}
-              />
-            </ListItem>
+            {isDesktop ? (
+              <>
+                <MenuItem text="Para Você" />
+                <MenuItem text="Para Empresas" />
+                <MenuItem text="Para Entregar" />
+              </>
+            ) : null}
           </List>
         </Toolbar>
       </AppBar>
     </Box>
   );
-}
+};
+
+const MenuItem = ({ text }) => (
+  <ListItem button>
+    <ListItemText primary={text} className={styles.loButtonAppBarMenuItem} />
+  </ListItem>
+);
+
+export default Header;
