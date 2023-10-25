@@ -2,7 +2,8 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 
 const footerStyle = {
-  position: "fixed",
+  margin: 0,
+  display: "flex",
   bottom: 0,
   width: "100%",
   background: "white",

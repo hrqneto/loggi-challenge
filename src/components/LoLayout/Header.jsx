@@ -36,9 +36,11 @@ const Header = () => {
           <List
             sx={{
               display: "flex",
-              gap: "20px",
               marginLeft: "auto",
               alignItems: "center",
+              padding: "0 220px",
+              width: "100%",
+
             }}
           >
             {isDesktop ? (
